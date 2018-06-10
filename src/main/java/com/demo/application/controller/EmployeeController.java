@@ -22,6 +22,7 @@ import com.demo.application.service.EmployeeService;
  *
  */
 @RestController
+@RequestMapping("/demo/web")
 public class EmployeeController {
 
 	private static Logger logger = Logger.getLogger(EmployeeController.class);
@@ -35,7 +36,7 @@ public class EmployeeController {
 	 * 
 	 * @return {@link ResponseEntity<List>}
 	 */
-	@RequestMapping(value = "demo/web/getAllEmployees", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/getAllEmployees", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<EmployeeDTO>> getAllEmployees() {
 		List<EmployeeDTO> dtoList = service.getAllEmployees();
 		logger.debug("Getting the response : [" + dtoList + "]");
